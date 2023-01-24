@@ -13,15 +13,35 @@ a {
 /* 0c090a, a71d31, E0CA3C */
 /* #B74068 */
 
+.logo {
+  display: none;
+}
+
+.logo-icon {
+  display: block;
+}
+
 .search-bar {
   border: none;
   outline: none;
   width: 175px; 
-  overflow: visible;
 }
 
 .search-bar::-webkit-search-cancel-button {
   -webkit-appearance: none;
+}
+
+@media screen and (min-width: 900px) {
+  .logo {
+    display: block;
+  }
+  .logo-icon {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 800px) {
+
 }
 
 @media screen and (min-width: 600px) {

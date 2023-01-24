@@ -1,8 +1,15 @@
-import React from 'react'
+import { Stack, Box } from '@mui/material'
+
+import { Sidebar, VideoFeed } from './'
 
 const MainFeed = () => {
+
+  
   return (
-    <div>MainFeed</div>
+    <Stack>
+
+      <VideoFeed />
+    </Stack>
   )
 }
 
