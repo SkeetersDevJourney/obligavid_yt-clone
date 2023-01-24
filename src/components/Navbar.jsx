@@ -1,11 +1,18 @@
-import { Stack } from "@mui/material";
+import { useState, useEffect } from 'react';
+import { Stack, useMediaQuery } from "@mui/material";
 import { Link } from 'react-router-dom';
 
 import SearchBar from './SearchBar'
 
-import logo from '../assets/logo-name.png'
+import logo from '../assets/logo.png'
+import logoIcon from '../assets/logo-icon.png'
 
 const Navbar = () => {
+  const [matches, setMatches] = useState(false)
+
+  // useEffect(() => {}, [])
+  
+
   return (
     <Stack 
       direction='row'
@@ -17,14 +24,13 @@ const Navbar = () => {
         top: 0,
         backgroundColor: '#0c090a',
       }}
-      
     >
 
       <Link 
         to='/'
         style={{ display: 'flex', alignItems: 'center' }}
       >
-        <img src={logo} alt='logo' height={45} />
+        <img src={matches ? logo : logoIcon} alt='logo' height={40} />
       </Link>
 
       <SearchBar />
