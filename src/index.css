@@ -4,6 +4,7 @@ body {
   padding: 0;
   box-sizing: border-box;
   font-family: 'Fira Sans', sans-serif;
+  overflow: hidden;
 }
 
 a {
@@ -51,25 +52,28 @@ a {
   overflow-X: auto;
   padding-bottom: 4px;
 }
-.sidebar-scroll::-webkit-scrollbar {
-  width: 4px;
+.sidebar-scroll::-webkit-scrollbar,
+.feed-scroll::-webkit-scrollbar  {
+  width: 5px;
 }
 .categories-scroll::-webkit-scrollbar {
   height: 4px;
 }
 .sidebar-scroll::-webkit-scrollbar-track,
-.categories-scroll::-webkit-scrollbar-track {
+.categories-scroll::-webkit-scrollbar-track,
+.feed-scroll::-webkit-scrollbar-track {
   background: transparent;
 }
-.sidebar-scroll::-webkit-scrollbar-thumb,.categories-scroll::-webkit-scrollbar-thumb {
+.sidebar-scroll::-webkit-scrollbar-thumb,
+.categories-scroll::-webkit-scrollbar-thumb,
+.feed-scroll::-webkit-scrollbar-thumb {
   background: #a71d31;
   border-radius: 10px;
   transition: background .3s ease;
 }
-.sidebar-scroll::-webkit-scrollbar-thumb:hover {
-  background: #f00;
-}
-.categories-scroll::-webkit-scrollbar-thumb:hover {
+.sidebar-scroll::-webkit-scrollbar-thumb:hover,
+.categories-scroll::-webkit-scrollbar-thumb:hover,
+.feed-scroll::-webkit-scrollbar-thumb:hover {
   background: #f00;
 }
 

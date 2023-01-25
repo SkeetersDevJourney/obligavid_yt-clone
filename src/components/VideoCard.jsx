@@ -1,13 +1,20 @@
 import { Link } from 'react-router-dom';
-import { Grid, Skeleton, Card, CardMedia, CardContent, Typography } from '@mui/material';
+import { Stack, Box, Grid, Skeleton, Card, CardMedia, CardContent, Typography } from '@mui/material';
 
 const VideoCard = ({ video }) => (
   <Grid item xs={1} sm={2} md={2} lg={3}>
     {
-      <Skeleton 
-        variant='rectangular'
-        sx={{backgroundColor: 'rgba(255,255,255,.1)'}}
-      /> 
+      <Card sx={{ backgroundColor: 'rgba(255,255,255,.1)', width: '100%'}}>
+        {
+          video 
+          ? <CardMedia 
+            image={video?.snippet?.thumbnails?.medium?.url} 
+            alt={video?.snippet?.title}
+            sx={{ height: '180px'}}
+            /> 
+          : <Skeleton sx={{ height: '180px'}}/>
+        }
+      </Card>
     }
   </Grid>
 )
@@ -31,3 +38,19 @@ export default VideoCard
 //     );
     
 //   )
+
+// <>
+//         <Skeleton 
+//           variant='rectangular'
+//           height='150px'
+//           sx={{backgroundColor: 'rgba(255,255,255,.1)'}}
+//         /> 
+//         <Stack>
+//           <Skeleton variant='circular' sx={{ display: 'inline', backgroundColor: 'rgba(255,255,255,.1)'}}/>
+//           <Box>
+//             <Skeleton height={20} sx={{backgroundColor: 'rgba(255,255,255,.1)'}}/>
+//             <Skeleton height={10} sx={{backgroundColor: 'rgba(255,255,255,.1)'}}/>
+            
+//           </Box>
+//         </Stack>
+//       </>

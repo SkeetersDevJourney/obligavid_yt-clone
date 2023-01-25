@@ -32,8 +32,6 @@ import FeedbackIcon from '@mui/icons-material/Feedback';
 export const categories = [
   { name: 'New', icon: <LocalFireDepartmentIcon />, },
   { name: 'Coding', icon: <CodeIcon />, },
-  { name: 'ReactJS', icon: <CodeIcon />, },
-  { name: 'NextJS', icon: <CodeIcon />, },
   { name: 'Music', icon: <MusicNoteIcon /> },
   { name: 'Education', icon: <SchoolIcon />, },
   { name: 'Podcast', icon: <GraphicEqIcon />, },
