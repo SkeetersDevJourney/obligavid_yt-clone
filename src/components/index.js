@@ -6,6 +6,7 @@ export { default as VideoFeed } from './VideoFeed';
 export { default as SearchFeed } from './SearchFeed';
 export { default as VideoCard } from './VideoCard';
 export { default as ChannelCard } from './ChannelCard';
+export { default as VideoDetails } from './VideoDetails';
 
 export { default as Categories } from './Categories';
 

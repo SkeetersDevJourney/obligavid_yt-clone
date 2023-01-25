@@ -111,6 +111,11 @@ a {
   background-color: #F00;
 }
 
+.react-player {
+  height: 77vh;
+  width: 100%;
+}
+
 @media screen and (min-width: 900px) {
   .logo {
     display: block;

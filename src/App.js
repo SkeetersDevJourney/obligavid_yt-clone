@@ -7,6 +7,7 @@ import {
   MainFeed, 
   Sidebar,
   SearchFeed,
+  VideoDetails,
 
   Premium,
   ObligaTunes,
@@ -47,7 +48,7 @@ const App = () => {
               selectedCategory={selectedCategory}
               setSelectedCategory={setSelectedCategory}/>
           }/>
-          {/* <Route path='/video/:id' element={<VideoDetail />} /> */}
+          <Route path='/video/:id' element={<VideoDetails />} />
           {/* <Route path='/channel/:id' element={<ChannelDetail />} /> */}
           <Route path='/search/:searchTerm' element={<SearchFeed />} />
           <Route path='/premium' element={<Premium />} />

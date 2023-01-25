@@ -15,8 +15,9 @@ const MainFeed = ({
     console.log(`sending request for ${selectedCategory} videos`)
 
     fetchFromAPI(`search?part=snippet&q=${selectedCategory}`)
-      .then(data => setVideos(data.items))
-      .then(() => console.log(videos))
+      .then(data => setVideos(data.items));
+    
+    console.log(videos)
   }, [selectedCategory]) 
   
   return (
@@ -36,7 +37,7 @@ const MainFeed = ({
         </Typography>
       </Box>
 
-      <VideoFeed videos={videos} />
+      <VideoFeed videos={videos} columns={{ xs: 1, sm: 4, md: 6, lg: 12}} />
     </Stack>
   )
 }
