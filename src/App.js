@@ -6,6 +6,7 @@ import {
   Navbar, 
   MainFeed, 
   Sidebar,
+  SearchFeed,
 
   Premium,
   ObligaTunes,
@@ -48,7 +49,7 @@ const App = () => {
           }/>
           {/* <Route path='/video/:id' element={<VideoDetail />} /> */}
           {/* <Route path='/channel/:id' element={<ChannelDetail />} /> */}
-          {/* <Route path='/search/:searchTerm' element={<SearchFeed />} /> */}
+          <Route path='/search/:searchTerm' element={<SearchFeed />} />
           <Route path='/premium' element={<Premium />} />
           <Route path='/obligatunes' element={<ObligaTunes />} />
           <Route path='/obligatv' element={<ObligaTV />} />

@@ -1,14 +1,17 @@
-import { useState } from 'react'
+import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 import { Paper, Button, IconButton } from '@mui/material';
 import { Search, Clear } from '@mui/icons-material';
 
 const SearchBar = () => {
   const [searchTerm, setSearchTerm] = useState('');
+  const navigate = useNavigate();
 
   const handleSearchSubmit = e => {
       e.preventDefault();
       setSearchTerm('');
+      navigate(`search/${searchTerm}`)
   }
 
   return (

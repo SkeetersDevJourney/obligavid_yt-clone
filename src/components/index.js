@@ -3,10 +3,11 @@ export { default as SearchBar } from './SearchBar';
 export { default as Sidebar } from './Sidebar';
 export { default as MainFeed } from './MainFeed';
 export { default as VideoFeed } from './VideoFeed';
+export { default as SearchFeed } from './SearchFeed';
+export { default as VideoCard } from './VideoCard';
+export { default as ChannelCard } from './ChannelCard';
 
 export { default as Categories } from './Categories';
-
-
 
 export { default as Premium } from './Premium';
 export { default as ObligaTunes } from './ObligaTunes';

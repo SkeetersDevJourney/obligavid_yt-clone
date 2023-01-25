@@ -15,14 +15,12 @@ const MainFeed = ({
     console.log(`sending request for ${selectedCategory} videos`)
 
     fetchFromAPI(`search?part=snippet&q=${selectedCategory}`)
-    // .then((data) => setVideos(data.items))
-    .then(data => setVideos(data.items))
-    .then(() => console.log(videos))
+      .then(data => setVideos(data.items))
+      .then(() => console.log(videos))
   }, [selectedCategory]) 
   
   return (
     <Stack>
-
       <Box sx={{ display: { xs: 'none', md: 'block' } }}>
         <Categories 
           showSidebarHandler={showSidebarHandler}
@@ -38,7 +36,7 @@ const MainFeed = ({
         </Typography>
       </Box>
 
-      {/* <VideoFeed videos={videos} /> */}
+      <VideoFeed videos={videos} />
     </Stack>
   )
 }
