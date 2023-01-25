@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { Stack, Slide, Box, Backdrop, IconButton, Divider, } from '@mui/material';
 import { Menu } from '@mui/icons-material';
 
@@ -13,13 +13,14 @@ import {
   sidebarBtnsInfo 
 } from '../utils/constants';
 
-
-
 const Sidebar = ({ 
   showSidebar, 
   showSidebarHandler, 
   selectedCategory, 
-  setSelectedCategory }) => {
+  setSelectedCategory 
+}) => {
+
+  const navigate = useNavigate();
 
   return (
     <Box>
@@ -76,6 +77,7 @@ const Sidebar = ({
                 }
                 key={name} 
                 onClick={() => {
+                  navigate('/');
                   setSelectedCategory(name);
                 }}
               >
@@ -121,7 +123,7 @@ const Sidebar = ({
                   }
                   key={name} 
                   onClick={() => {
-                    setSelectedCategory(name);
+                    navigate(`/${name.toLowerCase()}`);
                   }} 
                 >
                   <span style={{ color: name=== selectedCategory ? '#0c090a' : '#a71d31', marginRight: '15px'}}>{icon}</span>
@@ -140,7 +142,7 @@ const Sidebar = ({
                   }
                   key={name} 
                   onClick={() => {
-                    setSelectedCategory(name);
+                    navigate(`/${name.toLowerCase()}`);
                   }}
                 >
                   <span style={{ marginRight: '15px'}}>{icon}</span>

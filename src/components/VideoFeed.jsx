@@ -1,6 +1,6 @@
 import React from 'react'
 
-const VideoFeed = () => {
+const VideoFeed = ({ videos }) => {
   return (
     <div>VideoFeed</div>
   )

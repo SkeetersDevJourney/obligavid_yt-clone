@@ -1,9 +1,24 @@
-import { Stack, Box } from '@mui/material'
+import { useState, useEffect } from 'react'
+import { Stack, Box, Typography} from '@mui/material'
 
-import { Sidebar, VideoFeed, Categories } from './'
+import { VideoFeed, Categories } from './'
+import { fetchFromAPI } from '../utils/fetchFromAPI'
 
-const MainFeed = ({ showSidebarHandler, selectedCategory, setSelectedCategory }) => {
+const MainFeed = ({ 
+  showSidebarHandler, 
+  selectedCategory, 
+  setSelectedCategory }) => {
 
+  const [videos, setVideos] = useState([])
+
+  useEffect(() => {
+    console.log(`sending request for ${selectedCategory} videos`)
+
+    fetchFromAPI(`search?part=snippet&q=${selectedCategory}`)
+    // .then((data) => setVideos(data.items))
+    .then(data => setVideos(data.items))
+    .then(() => console.log(videos))
+  }, [selectedCategory]) 
   
   return (
     <Stack>
@@ -17,7 +32,13 @@ const MainFeed = ({ showSidebarHandler, selectedCategory, setSelectedCategory })
         />
       </Box>
 
-      <VideoFeed />
+      <Box>
+        <Typography variant="h4" fontWeight="bold" my={2} ml={2} sx={{ color: "#fff" }}>
+            {selectedCategory} 
+        </Typography>
+      </Box>
+
+      {/* <VideoFeed videos={videos} /> */}
     </Stack>
   )
 }

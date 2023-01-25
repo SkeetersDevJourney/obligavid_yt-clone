@@ -1,3 +1,4 @@
+import LocalFireDepartmentIcon from '@mui/icons-material/LocalFireDepartment';
 import MusicNoteIcon from '@mui/icons-material/MusicNote';
 import HomeIcon from '@mui/icons-material/Home';
 import CodeIcon from '@mui/icons-material/Code';
@@ -29,7 +30,7 @@ import SosIcon from '@mui/icons-material/Sos';
 import FeedbackIcon from '@mui/icons-material/Feedback';
 
 export const categories = [
-  { name: 'New', icon: <HomeIcon />, },
+  { name: 'New', icon: <LocalFireDepartmentIcon />, },
   { name: 'Coding', icon: <CodeIcon />, },
   { name: 'ReactJS', icon: <CodeIcon />, },
   { name: 'NextJS', icon: <CodeIcon />, },
@@ -57,12 +58,12 @@ export const sidebarBtnsPrimary = [
 export const sidebarBtnsSecondary = [
   { name: 'Library', icon: <VideoLibraryIcon />, },
   { name: 'History', icon: <HistoryIcon />, },
-  { name: 'Watch Later', icon: <BrowseGalleryIcon />, },
-  { name: 'Liked Videos', icon: <ThumbUpIcon />, },
+  { name: 'Later', icon: <BrowseGalleryIcon />, },
+  { name: 'Liked', icon: <ThumbUpIcon />, },
 ]
 
 export const sidebarBtnsMore = [
-  { name: 'ObligaVids Premium', icon: <WorkspacePremiumIcon />, },
+  { name: 'Premium', icon: <WorkspacePremiumIcon />, },
   { name: 'ObligaTunes', icon: <MusicVideoIcon />, },
   { name: 'ObligaTV', icon: <OndemandVideoIcon />, },
   { name: 'ObligaKids', icon: <ChildCareIcon />, },
@@ -71,5 +72,5 @@ export const sidebarBtnsMore = [
 export const sidebarBtnsInfo = [
   { name: 'Settings', icon: <SettingsIcon />, },
   { name: 'Help', icon: <SosIcon />, },
-  { name: 'Send Feedback', icon: <FeedbackIcon />, },
+  { name: 'Feedback', icon: <FeedbackIcon />, },
 ]

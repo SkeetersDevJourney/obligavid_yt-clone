@@ -1,11 +1,18 @@
 import { useState } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import { Box, Backdrop } from '@mui/material'
+import { Box } from '@mui/material'
 
 import { 
   Navbar, 
   MainFeed, 
-  Sidebar, 
+  Sidebar,
+
+  Premium,
+  ObligaTunes,
+  ObligaTV,
+  ObligaKids,
+
+  Settings, 
   Help, 
   Feedback  
 } from './components'
@@ -13,7 +20,7 @@ import {
 const App = () => {
   
   const [showSidebar, setShowSidebar] = useState(false);
-  const [selectedCategory, setSelectedCategory] = useState('Home')
+  const [selectedCategory, setSelectedCategory] = useState('New')
   
   const showSidebarHandler = () => {
     setShowSidebar(!showSidebar);
@@ -42,6 +49,11 @@ const App = () => {
           {/* <Route path='/video/:id' element={<VideoDetail />} /> */}
           {/* <Route path='/channel/:id' element={<ChannelDetail />} /> */}
           {/* <Route path='/search/:searchTerm' element={<SearchFeed />} /> */}
+          <Route path='/premium' element={<Premium />} />
+          <Route path='/obligatunes' element={<ObligaTunes />} />
+          <Route path='/obligatv' element={<ObligaTV />} />
+          <Route path='/obligaKids' element={<ObligaKids />} />
+          <Route path='/settings' element={<Settings />} />
           <Route path='/help' element={<Help />} />
           <Route path='/feedback' element={<Feedback />} />
         </Routes>
