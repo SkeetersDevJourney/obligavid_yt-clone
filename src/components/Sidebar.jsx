@@ -2,9 +2,18 @@ import { Link } from 'react-router-dom';
 import { Stack, Slide, Box, Backdrop, IconButton, Divider, } from '@mui/material';
 import { Menu } from '@mui/icons-material';
 
+
+import { Categories } from './'
 import logo from '../assets/logo.png'
 import logoIcon from '../assets/logo-icon.png'
-import { sidebarBtnsPrimary, sidebarBtnsSecondary, sidebarBtnsMore, sidebarBtnsInfo } from '../utils/constants'
+import { 
+  sidebarBtnsPrimary, 
+  sidebarBtnsSecondary, 
+  sidebarBtnsMore, 
+  sidebarBtnsInfo 
+} from '../utils/constants';
+
+
 
 const Sidebar = ({ 
   showSidebar, 
@@ -20,19 +29,13 @@ const Sidebar = ({
         onClick={showSidebarHandler}
       />
 
+
       <Slide direction='right' in={showSidebar}>
+
+        
         <Stack
+          className='sidebar'
           p={1.5}
-          sx={{
-            position: 'absolute',
-            top: 0,
-            left: 0,
-            // overflowY: 'scroll',
-            width: '250px',
-            height: '95vh',
-            backgroundColor: '#0c090a',
-            borderRadius: '0px 0px 25px 0px'
-          }}
         >
           <Stack direction='row' alignItems='center' mt='2px'>
             <IconButton 
@@ -42,7 +45,7 @@ const Sidebar = ({
                   mr: {xs: '10px', md: '15px'},
                   ':hover': { 
                     backgroundColor: 'rgba(12, 9, 10, .08)',
-                    color: '#FF0000' } }}
+                    color: '#a71d31' } }}
                 >
                 <Menu />
               </IconButton>
@@ -60,6 +63,7 @@ const Sidebar = ({
               <Divider sx={{ backgroundColor: 'rgb(255, 255, 255, .6)', margin: '10px 0px'}}/>
             }
             mt={2.5}
+            className='sidebar-scroll'
           >
             
             <Stack>
@@ -73,7 +77,6 @@ const Sidebar = ({
                 key={name} 
                 onClick={() => {
                   setSelectedCategory(name);
-                  showSidebarHandler();
                 }}
               >
                 <span style={{  marginRight: '15px'}}>{icon}</span>
@@ -93,7 +96,6 @@ const Sidebar = ({
                   key={name}  
                   onClick={() => {
                     setSelectedCategory(name);
-                    showSidebarHandler();
                   }}
                 >
                   <span style={{ marginRight: '15px'}}>{icon}</span>
@@ -101,6 +103,13 @@ const Sidebar = ({
                 </button>
               ))}
             </Stack>
+            
+            <Box sx={{ display: { xs: 'block', md: 'none' } }}>
+              <Categories 
+                selectedCategory={selectedCategory}
+                setSelectedCategory={setSelectedCategory}
+              />
+            </Box>
 
             <Stack>
               { sidebarBtnsMore.map(({name, icon}) => (
@@ -113,10 +122,9 @@ const Sidebar = ({
                   key={name} 
                   onClick={() => {
                     setSelectedCategory(name);
-                    showSidebarHandler();
                   }} 
                 >
-                  <span style={{ color: name=== selectedCategory ? '#0c090a' : '#FF0000', marginRight: '15px'}}>{icon}</span>
+                  <span style={{ color: name=== selectedCategory ? '#0c090a' : '#a71d31', marginRight: '15px'}}>{icon}</span>
                   <span>{name}</span>
                 </button>
               ))}
@@ -133,7 +141,6 @@ const Sidebar = ({
                   key={name} 
                   onClick={() => {
                     setSelectedCategory(name);
-                    showSidebarHandler();
                   }}
                 >
                   <span style={{ marginRight: '15px'}}>{icon}</span>

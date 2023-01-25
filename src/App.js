@@ -33,7 +33,12 @@ const App = () => {
         }
 
         <Routes>
-          <Route path='/' exact element={<MainFeed />}/>
+          <Route path='/' exact element={
+            <MainFeed 
+              showSidebarHandler={showSidebarHandler}
+              selectedCategory={selectedCategory}
+              setSelectedCategory={setSelectedCategory}/>
+          }/>
           {/* <Route path='/video/:id' element={<VideoDetail />} /> */}
           {/* <Route path='/channel/:id' element={<ChannelDetail />} /> */}
           {/* <Route path='/search/:searchTerm' element={<SearchFeed />} /> */}
