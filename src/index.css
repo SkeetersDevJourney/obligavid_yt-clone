@@ -123,14 +123,19 @@ a {
   .logo-icon {
     display: none;
   }
+  .show-side {
+    grid-template-columns: 1fr !important;
+    max-width: 320px !important;
+  }
 }
 
 @media screen and (min-width: 800px) {
-
+  
 }
 
 @media screen and (min-width: 600px) {
   .search-bar {
     width: 300px;
   }
+  
 }

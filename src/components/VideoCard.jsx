@@ -1,5 +1,6 @@
+import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { Stack, Box, Grid, Skeleton, Card, CardMedia, CardContent, Typography } from '@mui/material';
+import { Stack, Box, Grid, Card, CardMedia, CardContent, Typography } from '@mui/material';
 
 import {
   demoVideoUrl,
@@ -7,38 +8,39 @@ import {
   demoChannelTitle
 } from '../utils/constants'
 
-const VideoCard = ({ video }) => (
-  <Card sx={{ background: 'transparent', width: '100%', borderRadius: '20px'}}>
-    {
-      video 
-      ? 
-      <>
-        <Link to={video ? `/video/${video.id.videoId}` : `/video/cV2gBU6hKfY`}>
-          <CardMedia 
-            image={video?.snippet?.thumbnails?.medium?.url} 
-            alt={video?.snippet?.title}
-            sx={{ height: '180px'}}
-          /> 
+const VideoCard = ({ video }) => {
+  return (
+    <Card sx={{ 
+      background: 'transparent', 
+      width: '100%', 
+      borderRadius: '20px',
+      }}>
+      <Link to={`/video/${video.id.videoId}`}>
+        <CardMedia 
+          image={video?.snippet?.thumbnails?.medium?.url} 
+          alt={video?.snippet?.title}
+          sx={{ height: '180px'}}
+          onLoad={() => console.log('loaded')}
+        /> 
+      </Link>
+      <CardContent sx={{ backgroundColor: 'transparent', height: '100px' }}>
+
+        <Link to={ video ? `/video/${video?.id?.videoId}` : demoVideoUrl}>
+          <Typography variant="subtitle1" fontWeight="bold" color="#FFF">
+            {video?.snippet?.title.slice(0, 60) || demoVideoTitle.slice(0, 60)}
+          </Typography>
         </Link>
-        <CardContent sx={{ backgroundColor: 'transparent', height: '100px' }}>
 
-          <Link to={ video ? `/video/${video?.id?.videoId}` : demoVideoUrl}>
-            <Typography variant="subtitle1" fontWeight="bold" color="#FFF">
-              {video?.snippet?.title.slice(0, 60) || demoVideoTitle.slice(0, 60)}
-            </Typography>
-          </Link>
+        <Link to={ video ? `/video/${video?.id?.videoId}` : demoVideoUrl}>
+          <Typography variant="subtitle2" color="gray">
+            {video?.snippet?.channelTitle || demoChannelTitle}
+          </Typography>
+        </Link>
+      </CardContent>
+    </Card>
+  )
 
-          <Link to={ video ? `/video/${video?.id?.videoId}` : demoVideoUrl}>
-            <Typography variant="subtitle2" color="gray">
-              {video?.snippet?.channelTitle || demoChannelTitle}
-            </Typography>
-          </Link>
-        </CardContent>
-      </>
-      : <Skeleton sx={{ height: '150px'}}/>
-    }
-  </Card>
-)
+}
 
 export default VideoCard
 

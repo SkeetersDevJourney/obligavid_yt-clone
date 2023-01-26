@@ -1,22 +1,36 @@
-import { Box, Grid } from '@mui/material';
+import { Box, Typography } from '@mui/material';
 
 import { VideoCard, ChannelCard } from './';
 
-const VideoFeed = ({ videos, columns }) => {
+const VideoFeed = ({ videos, showSide = false }) => {
+
   return (
-    <Box className='feed-scroll' pb={5} sx={{ marginX: 'auto', maxWidth: '1500px', height: "90vh", overflowY: 'auto' }} px={3}>
-      <Grid
-        container
-        spacing={3}
-        columns={columns}
+    <Box className='feed-scroll' pb={5} sx={{  height: "90vh", overflowY: 'auto' }} px={3}>
+      <Box
+        sx={{ 
+          display: 'grid',
+          gap: '20px',
+          marginX: 'auto',
+          maxWidth: '1360px',
+          gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))'
+        }}
+        className={ showSide && 'show-side' }
       >
-        { videos?.map((video, index) => (
-          <Grid item xs={1} sm={2} md={2} lg={3} key={index}>
-            { video?.id?.videoId && <VideoCard video={video}/> }
-            { video?.id?.channelId && <ChannelCard video={video} />}
-          </Grid>
-          )) }
-      </Grid>
+        { videos?.length ? (
+        
+          videos.map((item, index) => (
+            <Box key={index}>
+              { item?.id?.videoId && <VideoCard video={item}/> }
+              { item?.id?.channelId && <ChannelCard channelDetail={item} />}
+            </Box>
+          )) 
+          ) : (
+            <Typography variant='h3' px={2} mt={5} sx={{ color: '#fff' }} textAlign='center'>
+              Loading...
+            </Typography>
+          )
+        }
+      </Box>
     </Box>
   )
 }
