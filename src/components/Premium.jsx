@@ -1,4 +1,4 @@
-import { Stack, Box, Divider, Typography, Button } from '@mui/material'
+import { Stack, Box, Typography, Button } from '@mui/material'
 import PlayCircleOutlineIcon from '@mui/icons-material/PlayCircleOutline';
 import DownloadIcon from '@mui/icons-material/Download';
 import AccessAlarmIcon from '@mui/icons-material/AccessAlarm';
@@ -20,7 +20,7 @@ const Premium = () => {
           backgroundImage: `url(${Patterns})`,
           backgroundSize: 'cover',
           backgroundPosition: 'top',
-          height: '65vh',
+          height: '70vh',
         }}
       >
         <img 
@@ -57,12 +57,9 @@ const Premium = () => {
       <Stack 
         justifyContent='center'
         alignItems='center'
-        divider={
-          <Divider sx={{ backgroundColor: '#0c090a', margin: '10px 0px'}}/>
-        }
         direction={{ xs: 'column', md: 'row' }}
         backgroundColor='#a71d31'
-        p={2}
+        py={4}
       > 
 
         <ContentCard 
@@ -81,6 +78,16 @@ const Premium = () => {
           text2={'Never waste another second of your life NOT consuming our entertainment!'} 
         />
       </Stack>
+
+      <Box
+        sx={{
+          backgroundImage: `url(${Patterns})`,
+          backgroundSize: 'cover',
+          height: '30vh',
+        }}
+      >
+
+      </Box>
     </Box>
   )
 }

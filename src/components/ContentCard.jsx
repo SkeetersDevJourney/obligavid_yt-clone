@@ -12,12 +12,12 @@ const ContentCard = ({ media, text1, text2 }) => {
         justifyContent: 'center',
         alignItems: 'center',
         textAlign: 'center',
-        padding: '15px',
+        padding: '25px',
         boxShadow: 'none'
       }}
     > 
       {media}
-      <Typography variant='h5' my={1} >
+      <Typography variant='h5' my={1.5} >
         {text1}
       </Typography>
       <Typography variant='subtitle1'>
