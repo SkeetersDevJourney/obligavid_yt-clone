@@ -5,6 +5,7 @@ import { Box } from '@mui/material'
 import { 
   Navbar, 
   MainFeed, 
+  MinisFeed,
   Sidebar,
   SearchFeed,
   VideoDetails,

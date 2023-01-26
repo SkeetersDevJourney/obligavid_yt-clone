@@ -23,17 +23,12 @@ const Sidebar = ({
   const navigate = useNavigate();
 
   return (
-    <Box>
-
+    <Box>s
       <Backdrop 
         open={showSidebar}
         onClick={showSidebarHandler}
       />
-
-
       <Slide direction='right' in={showSidebar}>
-
-        
         <Stack
           className='sidebar'
           p={1.5}
@@ -105,13 +100,6 @@ const Sidebar = ({
                 </button>
               ))}
             </Stack>
-            
-            <Box sx={{ display: { xs: 'block', md: 'none' } }}>
-              <Categories 
-                selectedCategory={selectedCategory}
-                setSelectedCategory={setSelectedCategory}
-              />
-            </Box>
 
             <Stack>
               { sidebarBtnsMore.map(({name, icon}) => (
@@ -131,6 +119,13 @@ const Sidebar = ({
                 </button>
               ))}
             </Stack>
+            
+            <Box sx={{ display: { xs: 'block', md: 'none' } }}>
+              <Categories 
+                selectedCategory={selectedCategory}
+                setSelectedCategory={setSelectedCategory}
+              />
+            </Box>
 
             <Stack>
               { sidebarBtnsInfo.map(({name, icon}) => (

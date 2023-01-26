@@ -37,7 +37,7 @@ const MainFeed = ({
         </Typography>
       </Box>
 
-      <VideoFeed videos={videos} columns={{ xs: 1, sm: 4, md: 6, lg: 12}} />
+      <VideoFeed videos={videos} />
     </Stack>
   )
 }
