@@ -12,8 +12,6 @@ const MainFeed = ({
   const [videos, setVideos] = useState([])
 
   useEffect(() => {
-    console.log(`sending request for ${selectedCategory} videos`)
-
     fetchFromAPI(`search?part=snippet&q=${selectedCategory}`)
       .then(data => setVideos(data.items));
     
@@ -22,15 +20,6 @@ const MainFeed = ({
   
   return (
     <Stack>
-      <Box sx={{ display: { xs: 'none', md: 'block' } }}>
-        <Categories 
-          showSidebarHandler={showSidebarHandler}
-          selectedCategory={selectedCategory}
-          setSelectedCategory={setSelectedCategory}
-          direction='row'
-        />
-      </Box>
-
       <Box>
         <Typography variant="h4" fontWeight="bold" my={2} ml={2} sx={{ color: "#fff" }}>
             {selectedCategory} 

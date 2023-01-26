@@ -73,7 +73,8 @@ const Sidebar = ({
                 key={name} 
                 onClick={() => {
                   navigate('/');
-                  setSelectedCategory(name);
+                  setSelectedCategory(name)
+                  showSidebarHandler();
                 }}
               >
                 <span style={{  marginRight: '15px'}}>{icon}</span>
@@ -93,6 +94,7 @@ const Sidebar = ({
                   key={name}  
                   onClick={() => {
                     setSelectedCategory(name);
+                    showSidebarHandler();
                   }}
                 >
                   <span style={{ marginRight: '15px'}}>{icon}</span>
@@ -112,6 +114,7 @@ const Sidebar = ({
                   key={name} 
                   onClick={() => {
                     navigate(`/${name.toLowerCase()}`);
+                    showSidebarHandler();
                   }} 
                 >
                   <span style={{ color: name=== selectedCategory ? '#0c090a' : '#a71d31', marginRight: '15px'}}>{icon}</span>
@@ -138,6 +141,7 @@ const Sidebar = ({
                   key={name} 
                   onClick={() => {
                     navigate(`/${name.toLowerCase()}`);
+                    showSidebarHandler();
                   }}
                 >
                   <span style={{ marginRight: '15px'}}>{icon}</span>

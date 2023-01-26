@@ -13,6 +13,8 @@ export { default as VideoDetails } from './VideoDetails';
 export { default as Categories } from './Categories';
 
 export { default as Premium } from './Premium';
+export { default as ContentCard } from './ContentCard';
+
 export { default as ObligaTunes } from './ObligaTunes';
 export { default as ObligaTV } from './ObligaTV';
 export { default as ObligaKids } from './ObligaKids';

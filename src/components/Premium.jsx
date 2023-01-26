@@ -5,6 +5,7 @@ import AccessAlarmIcon from '@mui/icons-material/AccessAlarm';
 
 import Patterns from '../assets/patterns.png';
 import PremiumLogo from '../assets/logo-premium.png';
+import { ContentCard } from './'
 
 const Premium = () => {
   return (
@@ -62,54 +63,23 @@ const Premium = () => {
         direction={{ xs: 'column', md: 'row' }}
         backgroundColor='#a71d31'
         p={2}
-      >
-        <Stack
-          justifyContent='center'
-          alignItems='center'
-          textAlign='center'
-          sx={{ maxWidth: '350px' }}
-          p={2}
-        > 
-          <PlayCircleOutlineIcon sx={{ fontSize: '100px'}} />
-          <Typography variant='h5' my={1} >
-            Ad-free & background play
-          </Typography>
-          <Typography variant='subtitle1'>
-            Watch videos uninterrupted by ads, while using other apps, or when the screen is locked
-          </Typography>
-        </Stack>
+      > 
 
-        <Stack 
-          justifyContent='center'
-          alignItems='center'
-          textAlign='center'
-          sx={{ maxWidth: '350px' }}
-          p={2}
-        >
-          <DownloadIcon sx={{ fontSize: '100px'}}/>
-          <Typography variant='h5' my={1}>
-            Downloads
-          </Typography>
-          <Typography variant='subtitle1'>
-            Save videos for when you really need them – like when you’re on a plane or commuting.
-          </Typography>
-        </Stack>
-
-        <Stack
-          justifyContent='center'
-          alignItems='center'
-          textAlign='center'
-          sx={{ maxWidth: '350px' }}
-          p={2}
-        > 
-          <AccessAlarmIcon sx={{ fontSize: '100px'}}/>
-          <Typography variant='h5' my={1}>
-            More Watch Time
-          </Typography>
-          <Typography variant='subtitle1'>
-            Never waste another second of your life NOT consuming our entertainment!
-          </Typography>
-        </Stack>
+        <ContentCard 
+          media={<PlayCircleOutlineIcon sx={{ fontSize: '100px'}} />} 
+          text1={'Ad-free & background play'} 
+          text2={'Watch videos uninterrupted by ads, while using other apps, or when the screen is locked'} 
+        />
+        <ContentCard 
+          media={<DownloadIcon sx={{ fontSize: '100px'}}/>} 
+          text1={'Downloads'} 
+          text2={'Save videos for when you really need them – like when you’re on a plane or commuting.'} 
+        />
+        <ContentCard 
+          media={<AccessAlarmIcon sx={{ fontSize: '100px'}}/>} 
+          text1={'More Watch Time'} 
+          text2={'Never waste another second of your life NOT consuming our entertainment!'} 
+        />
       </Stack>
     </Box>
   )

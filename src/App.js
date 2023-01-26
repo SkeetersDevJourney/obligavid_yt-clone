@@ -32,7 +32,11 @@ const App = () => {
     <BrowserRouter>
       <Box sx={{backgroundColor: '#0c090a', position: 'relative'}}>
 
-        <Navbar showSidebarHandler={showSidebarHandler}/>
+        <Navbar 
+          showSidebarHandler={showSidebarHandler}
+          selectedCategory={selectedCategory}
+          setSelectedCategory={setSelectedCategory}  
+        />
         
         { showSidebar && 
           <Sidebar 
@@ -51,7 +55,7 @@ const App = () => {
           }/>
           <Route path='/video/:id' element={<VideoDetails />} />
           {/* <Route path='/channel/:id' element={<ChannelDetail />} /> */}
-          <Route path='/search/:searchTerm' element={<SearchFeed />} />
+          <Route path='/search/:searchTerm' element={<SearchFeed selectedCategory={selectedCategory}/>} />
           <Route path='/premium' element={<Premium />} />
           <Route path='/obligatunes' element={<ObligaTunes />} />
           <Route path='/obligatv' element={<ObligaTV />} />
