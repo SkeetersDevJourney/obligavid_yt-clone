@@ -11,11 +11,11 @@ const Comment = ({ comment }) => {
 
   return (
     <Stack direction='row' alignItems='left' px={1} py={2.5} > 
-      <Link to={`/channel/${authorChannelId.value}`}>
+      <Link to={process.env.PUBLIC_URL + `/channel/${authorChannelId.value}`}>
         <img src={authorProfileImageUrl} alt='#' style={{ borderRadius: '50%', height: '45px' }} referrerPolicy="no-referrer" />
       </Link>
       <Stack alignItems='left' mx={1}>
-        <Link to={`/channel/${authorChannelId.value}`}>
+        <Link to={process.env.PUBLIC_URL + `/channel/${authorChannelId.value}`}>
           <Typography fontWeight='bold'>
             @{authorDisplayName}
           </Typography>

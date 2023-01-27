@@ -15,7 +15,7 @@ const VideoCard = ({ video }) => {
       width: '100%', 
       borderRadius: '20px',
       }}>
-      <Link to={`/video/${video.id.videoId}`}>
+      <Link to={process.env.PUBLIC_URL + `/video/${video.id.videoId}`}>
         <CardMedia 
           image={video?.snippet?.thumbnails?.medium?.url} 
           alt={video?.snippet?.title}
@@ -25,13 +25,13 @@ const VideoCard = ({ video }) => {
       </Link>
       <CardContent sx={{ backgroundColor: 'transparent', height: '100px' }}>
 
-        <Link to={ video ? `/video/${video?.id?.videoId}` : demoVideoUrl}>
+        <Link to={ video ? process.env.PUBLIC_URL + `/video/${video?.id?.videoId}` : demoVideoUrl}>
           <Typography variant="subtitle1" fontWeight="bold" color="#FFF">
             {video?.snippet?.title.slice(0, 60) || demoVideoTitle.slice(0, 60)}
           </Typography>
         </Link>
 
-        <Link to={ video ? `/video/${video?.id?.videoId}` : demoVideoUrl}>
+        <Link to={ video ? process.env.PUBLIC_URL + `/video/${video?.id?.videoId}` : demoVideoUrl}>
           <Typography variant="subtitle2" color="gray">
             {video?.snippet?.channelTitle || demoChannelTitle}
           </Typography>
@@ -39,7 +39,6 @@ const VideoCard = ({ video }) => {
       </CardContent>
     </Card>
   )
-
 }
 
 export default VideoCard
