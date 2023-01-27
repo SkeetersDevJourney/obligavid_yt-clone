@@ -20,7 +20,7 @@ const ChannelCard = ({ channelDetail }) => {
       margin: 'auto',
     }}
   >
-    <Link to={process.env.PUBLIC_URL + `/channel/${channelDetail?.id?.channelId ||  channelDetail?.id}`}>
+    <Link to={`${process.env.PUBLIC_URL}/channel/${channelDetail?.id?.channelId || channelDetail?.id}`}>
       <CardContent sx={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', textAlign: 'center', color: '#fff' }}>
         
         <img 

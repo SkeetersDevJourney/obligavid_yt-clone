@@ -93,6 +93,7 @@ const Sidebar = ({
                   }
                   key={name}  
                   onClick={() => {
+                    navigate(process.env.PUBLIC_URL + '/');
                     setSelectedCategory(name);
                     showSidebarHandler();
                   }}
