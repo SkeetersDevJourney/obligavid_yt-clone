@@ -10,8 +10,6 @@ const VideoFeed = ({ videos, showSide = false }) => {
         sx={{ 
           display: 'grid',
           gap: '20px',
-          marginX: 'auto',
-          maxWidth: '1360px',
           gridTemplateColumns: `repeat(auto-fit, minmax(320px, 1fr))`
         }}
         className={ showSide && 'show-side' }

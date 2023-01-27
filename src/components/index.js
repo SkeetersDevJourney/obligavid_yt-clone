@@ -10,6 +10,8 @@ export { default as VideoCard } from './VideoCard';
 export { default as ChannelCard } from './ChannelCard';
 export { default as ChannelDetails } from './ChannelDetails';
 export { default as VideoDetails } from './VideoDetails';
+export { default as VideoDetailsAccordion } from './VideoDetailsAccordion';
+
 
 export { default as Categories } from './Categories';
 

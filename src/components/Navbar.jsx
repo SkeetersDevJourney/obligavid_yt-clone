@@ -12,7 +12,6 @@ const Navbar = ({ showSidebarHandler, selectedCategory, setSelectedCategory }) =
 
   return (
     <>
-    
       <Stack 
         direction='row'
         alignItems='center'
@@ -50,12 +49,15 @@ const Navbar = ({ showSidebarHandler, selectedCategory, setSelectedCategory }) =
         <SearchBar />
 
       </Stack>
-      <Categories 
-        showSidebarHandler={showSidebarHandler}
-        selectedCategory={selectedCategory}
-        setSelectedCategory={setSelectedCategory}
-        direction='row'
-      />
+      
+      <Box sx={{ display: { xs: 'none', md: 'block' } }}>
+        <Categories 
+          showSidebarHandler={showSidebarHandler}
+          selectedCategory={selectedCategory}
+          setSelectedCategory={setSelectedCategory}
+          direction='row'
+        />
+      </Box>
     </>
   )
 }

@@ -20,13 +20,18 @@ const MainFeed = ({
   
   return (
     <Stack>
-      <Box>
+      <Box sx={{
+        width: '100%',
+        marginX: 'auto',
+        maxWidth: '1500px'
+      }}
+      >
         <Typography variant="h4" fontWeight="bold" my={2} ml={2} sx={{ color: "#fff" }}>
             {selectedCategory} 
         </Typography>
-      </Box>
 
-      <VideoFeed videos={videos} />
+        <VideoFeed videos={videos} />
+      </Box>
     </Stack>
   )
 }

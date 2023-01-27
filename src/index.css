@@ -4,7 +4,6 @@ body {
   padding: 0;
   box-sizing: border-box;
   font-family: 'Fira Sans', sans-serif;
-  overflow: hidden;
 }
 
 a {
@@ -25,7 +24,7 @@ a {
 .search-bar {
   border: none;
   outline: none;
-  width: 175px; 
+  width: 150px; 
 }
 
 .search-bar::-webkit-search-cancel-button {
@@ -112,11 +111,6 @@ a {
   background-color: #F00;
 }
 
-.react-player {
-  height: 77vh;
-  width: 100%;
-}
-
 .page-logo {
   height: 30px;
 }
@@ -151,4 +145,8 @@ a {
   .page-logo {
     height: 70px;
   }
+  .categories-scroll {
+    padding-left: 10px;
+  }
+  
 }
