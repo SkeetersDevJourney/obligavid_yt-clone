@@ -1,8 +1,8 @@
-import { Stack, Box, Typography } from '@mui/material'
+import { Stack, Typography } from '@mui/material'
 import { Link } from 'react-router-dom'; 
 
 import { Likes } from './';
-import { demoChannelUrl, demoChannelTitle, demoProfilePicture } from '../utils/constants';
+// import { demoChannelUrl, demoChannelTitle, demoProfilePicture } from '../utils/constants';
 
 
 const Comment = ({ comment }) => {
