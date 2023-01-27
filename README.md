@@ -4,6 +4,6 @@ This is ObligaVids, yet another obligatory video hosting website clone built for
 
 ## Tech
 
-React
-MUI Core
+React,
+MUI Core,
 Rapid API
