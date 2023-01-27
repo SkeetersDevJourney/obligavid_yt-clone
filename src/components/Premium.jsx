@@ -9,7 +9,7 @@ import { ContentCard } from './'
 
 const Premium = () => {
   return (
-    <Box className='feed-scroll' height='95vh' sx={{overflowY: 'auto'}}>
+    <Box height='95vh' >
       <Stack 
         justifyContent='center' 
         alignItems='center'

@@ -1,59 +1,42 @@
 import { useState, useEffect } from 'react';
-import { Link, useActionData, useParams } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import ReactPlayer from 'react-player';
 import { Typography, Box, Stack, IconButton } from '@mui/material';
 
-import ThumbUpOffAltIcon from '@mui/icons-material/ThumbUpOffAlt';
-import ThumbDownOffAltIcon from '@mui/icons-material/ThumbDownOffAlt';
-import ThumbUpIcon from '@mui/icons-material/ThumbUp';
-import ThumbDownIcon from '@mui/icons-material/ThumbDown';
 
+import { Likes } from './';
 import { VideoFeed, VideoDetailsAccordion } from './';
-import { fetchFromAPI, fetchFromApi } from '../utils/fetchFromAPI';
+import { fetchFromAPI } from '../utils/fetchFromAPI';
 
 const VideoDetails = () => {
   const [videoDetails, setVideoDetails] = useState(null);
   const [relatedVideos, setRelatedVideos] = useState(null);
+  const [comments, setComments] = useState(null)
   const { id } = useParams();
   
-  const [liked, setLiked] = useState(false)
-  const [disliked, setDisliked] = useState(false)
-  
-  console.log(videoDetails, relatedVideos);
+  console.log(videoDetails, comments, relatedVideos);
 
   useEffect(() => {
     fetchFromAPI(`videos?part=snippet,statistics&id=${id}`)
       .then(data => setVideoDetails(data.items[0]));
 
+    fetchFromAPI(`commentThreads?part=snippet&videoId=${id}&maxResults=5`)
+      // .then(data => setComments(data.items));
+      .then(data => setComments(data.items));
+
     fetchFromAPI(`search?part=snippet&relatedToVideoId=${id}&type=video`)
       .then(data => setRelatedVideos(data.items));
+
+    
   }, [id]);
 
   if (!videoDetails) return 'Loading...';
 
   const { snippet: { title, channelId, channelTitle }, statistics: { viewCount, likeCount } } = videoDetails;
 
-  const likeHandler = () => {
-    if (liked) {
-      setLiked(false)
-      
-    } else {
-      setLiked(true)
-      setDisliked(false)
-    }
-  }
-  const dislikeHandler = () => {
-    if (disliked) {
-      setDisliked(false)
-    } else {
-      setDisliked(true)
-      setLiked(false)
-    }
-  }
-
   return (
     <Box minHeight='95vh' pt={2}>
-      <Stack direction={{ xs: 'column', md: 'row' }}>
+      <Stack direction={{ xs: 'column', md: 'row' }} px={2}>
         <Box sx={{ width: '100%' }}>
           <ReactPlayer 
             url={`https://www.youtube.com/watch?v=${id}`}
@@ -66,10 +49,10 @@ const VideoDetails = () => {
           </Typography>
           <Stack 
             direction='row' 
+            alignItems='center'
             justifyContent='space-between'
             sx={{ color: '#fff' }}
-            py={1}
-            pr={2}
+            px={2}
           >
             <Link to={`/channel/${channelId}`}>
               <Typography variant={{ sm: 'subtitle1', md: 'h6'}} color='#fff'>
@@ -77,52 +60,10 @@ const VideoDetails = () => {
               </Typography>
             </Link>
 
-            <Stack direction='row' alignItems='center' >
-              <IconButton 
-                sx={{ 
-                  borderRadius: '10px 0 0 10px', 
-                  height: '45px',
-                  color: 'white',
-                  backgroundColor: liked ? '#a71d31' : 'rgba(255,255,255,.15)',
-                  ':hover': { backgroundColor: liked ? 'red' : 'rgba(255,255,255,.3)' },
-                  transition: 'all .3s ease'
-                  
-                }}
-                onClick={likeHandler}
-              >
-                {
-                  liked 
-                  ? <ThumbUpIcon />
-                  : <ThumbUpOffAltIcon />  
-                }
-                {
-                  liked 
-                  ? parseInt(likeCount) + 1
-                  : parseInt(likeCount)
-                }
-              </IconButton>
-              <IconButton 
-                sx={{ 
-                  borderRadius: '0 10px 10px 0', 
-                  color: 'white',
-                  height: '45px',
-                  backgroundColor: disliked ? '#a71d31' : 'rgba(255,255,255,.15)',
-                  ':hover': { backgroundColor: disliked ? 'red' : 'rgba(255,255,255,.3)' },
-                  transition: 'all .3s ease'
-                  
-                }}
-                onClick={dislikeHandler}
-              >
-                {
-                  disliked 
-                  ? <ThumbDownIcon />
-                  : <ThumbDownOffAltIcon />  
-                }
-                </IconButton>
-            </Stack>
+            <Likes likeCount={likeCount} />
           </Stack>
 
-          <VideoDetailsAccordion videoDetails={videoDetails} />
+          <VideoDetailsAccordion videoDetails={videoDetails} comments={comments} />
         </Box>
 
         <Box justifyContent='center' alignItems='center'>

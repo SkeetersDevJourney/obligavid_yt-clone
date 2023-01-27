@@ -4,7 +4,6 @@ import { Box } from '@mui/material';
 
 import { VideoFeed, ChannelCard } from './';
 import { fetchFromAPI } from '../utils/fetchFromAPI'
-import { convertLength } from '@mui/material/styles/cssUtils';
 
 const ChannelDetails = () => {
   const { id } = useParams();
