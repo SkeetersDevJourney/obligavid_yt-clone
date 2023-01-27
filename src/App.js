@@ -4,11 +4,11 @@ import { Box } from '@mui/material'
 
 import { 
   Navbar, 
-  MainFeed, 
-  MinisFeed,
+  MainFeed,
   Sidebar,
   SearchFeed,
   VideoDetails,
+  ChannelDetails,
 
   Premium,
   ObligaTunes,
@@ -54,7 +54,7 @@ const App = () => {
               setSelectedCategory={setSelectedCategory}/>
           }/>
           <Route path='/video/:id' element={<VideoDetails />} />
-          {/* <Route path='/channel/:id' element={<ChannelDetail />} /> */}
+          <Route path='/channel/:id' element={<ChannelDetails />} />
           <Route path='/search/:searchTerm' element={<SearchFeed selectedCategory={selectedCategory}/>} />
           <Route path='/premium' element={<Premium />} />
           <Route path='/obligatunes' element={<ObligaTunes />} />
