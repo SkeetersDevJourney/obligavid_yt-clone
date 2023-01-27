@@ -38,7 +38,11 @@ const ChannelDetails = () => {
 
         </Box>
       </Box>
-      <Box display='flex' justifyContent='center'>
+      <Box sx={{
+        width: '100%',
+        marginX: 'auto',
+        maxWidth: '1500px'
+      }}>
         <VideoFeed videos={videos} />
       </Box>
     </Box>
