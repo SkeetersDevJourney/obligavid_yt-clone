@@ -72,7 +72,7 @@ const Sidebar = ({
                 }
                 key={name} 
                 onClick={() => {
-                  navigate('/');
+                  navigate(process.env.PUBLIC_URL + '/');
                   setSelectedCategory(name)
                   showSidebarHandler();
                 }}
@@ -113,7 +113,7 @@ const Sidebar = ({
                   }
                   key={name} 
                   onClick={() => {
-                    navigate(`/${name.toLowerCase()}`);
+                    navigate(process.env.PUBLIC_URL + `/${name.toLowerCase()}`);
                     showSidebarHandler();
                   }} 
                 >
@@ -140,7 +140,7 @@ const Sidebar = ({
                   }
                   key={name} 
                   onClick={() => {
-                    navigate(`/${name.toLowerCase()}`);
+                    navigate(process.env.PUBLIC_URL + `/${name.toLowerCase()}`);
                     showSidebarHandler();
                   }}
                 >

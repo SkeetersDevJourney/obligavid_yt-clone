@@ -11,7 +11,7 @@ const SearchBar = () => {
   const handleSearchSubmit = e => {
       e.preventDefault();
       setSearchTerm('');
-      navigate(`search/${searchTerm}`)
+      navigate(process.env.PUBLIC_URL + `search/${searchTerm}`)
   }
 
   return (

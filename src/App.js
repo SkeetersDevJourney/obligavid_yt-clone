@@ -47,22 +47,22 @@ const App = () => {
         }
 
         <Routes>
-          <Route path='/' exact element={
+          <Route path={process.env.PUBLIC_URL + '/'} exact element={
             <MainFeed 
               showSidebarHandler={showSidebarHandler}
               selectedCategory={selectedCategory}
               setSelectedCategory={setSelectedCategory}/>
           }/>
-          <Route path='/video/:id' element={<VideoDetails />} />
-          <Route path='/channel/:id' element={<ChannelDetails />} />
-          <Route path='/search/:searchTerm' element={<SearchFeed selectedCategory={selectedCategory}/>} />
-          <Route path='/premium' element={<Premium />} />
-          <Route path='/obligatunes' element={<ObligaTunes />} />
-          <Route path='/obligatv' element={<ObligaTV />} />
-          <Route path='/obligaKids' element={<ObligaKids />} />
-          <Route path='/settings' element={<Settings />} />
-          <Route path='/help' element={<Help />} />
-          <Route path='/feedback' element={<Feedback />} />
+          <Route path={process.env.PUBLIC_URL + '/video/:id'} element={<VideoDetails />} />
+          <Route path={process.env.PUBLIC_URL + '/channel/:id'} element={<ChannelDetails />} />
+          <Route path={process.env.PUBLIC_URL + '/search/:searchTerm'} element={<SearchFeed selectedCategory={selectedCategory}/>} />
+          <Route path={process.env.PUBLIC_URL + '/premium'} element={<Premium />} />
+          <Route path={process.env.PUBLIC_URL + '/obligatunes'} element={<ObligaTunes />} />
+          <Route path={process.env.PUBLIC_URL + '/obligatv'} element={<ObligaTV />} />
+          <Route path={process.env.PUBLIC_URL + '/obligaKids'} element={<ObligaKids />} />
+          <Route path={process.env.PUBLIC_URL + '/settings'} element={<Settings />} />
+          <Route path={process.env.PUBLIC_URL + '/help'} element={<Help />} />
+          <Route path={process.env.PUBLIC_URL + '/feedback'} element={<Feedback />} />
         </Routes>
       </Box>
     </BrowserRouter>
