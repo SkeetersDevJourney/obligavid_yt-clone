@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/obligavid_yt-clone/static/css/main.e6758449.css",
+    "main.js": "/obligavid_yt-clone/static/js/main.d76f2819.js",
+    "static/media/patterns.png": "/obligavid_yt-clone/static/media/patterns.a413a42fd8bfbf753389.png",
+    "static/media/logo-premium.png": "/obligavid_yt-clone/static/media/logo-premium.5f6db60e5534b3bab23d.png",
+    "static/media/logo.png": "/obligavid_yt-clone/static/media/logo.69c7fe9e0904b3b5ad4e.png",
+    "index.html": "/obligavid_yt-clone/index.html",
+    "main.e6758449.css.map": "/obligavid_yt-clone/static/css/main.e6758449.css.map",
+    "main.d76f2819.js.map": "/obligavid_yt-clone/static/js/main.d76f2819.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.e6758449.css",
+    "static/js/main.d76f2819.js"
+  ]
+}
