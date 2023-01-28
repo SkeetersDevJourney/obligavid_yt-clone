@@ -10,7 +10,6 @@ import {
   sidebarBtnsPrimary, 
   sidebarBtnsSecondary, 
   sidebarBtnsMore, 
-  sidebarBtnsInfo 
 } from '../utils/constants';
 
 const Sidebar = ({ 
@@ -130,29 +129,7 @@ const Sidebar = ({
                 setSelectedCategory={setSelectedCategory}
               />
             </Box>
-
-            <Stack>
-              { sidebarBtnsInfo.map(({name, icon}) => (
-                <button 
-                  className={
-                    name === selectedCategory 
-                    ? 'sidebar-btn selected'
-                    : 'sidebar-btn' 
-                  }
-                  key={name} 
-                  onClick={() => {
-                    navigate(process.env.PUBLIC_URL + `/${name.toLowerCase()}`);
-                    showSidebarHandler();
-                  }}
-                >
-                  <span style={{ marginRight: '15px'}}>{icon}</span>
-                  <span>{name}</span>
-                </button>
-              ))}
-            </Stack>
           </Stack>
-          
-
         </Stack>
       </Slide>
     </Box>

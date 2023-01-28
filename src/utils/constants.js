@@ -25,10 +25,6 @@ import WorkspacePremiumIcon from '@mui/icons-material/WorkspacePremium';
 import MusicVideoIcon from '@mui/icons-material/MusicVideo';
 import ChildCareIcon from '@mui/icons-material/ChildCare';
 
-import SettingsIcon from '@mui/icons-material/Settings';
-import SosIcon from '@mui/icons-material/Sos';
-import FeedbackIcon from '@mui/icons-material/Feedback';
-
 export const categories = [
   { name: 'New', icon: <LocalFireDepartmentIcon />, },
   { name: 'Coding', icon: <CodeIcon />, },
@@ -65,12 +61,6 @@ export const sidebarBtnsMore = [
   { name: 'ObligaTunes', icon: <MusicVideoIcon />, },
   { name: 'ObligaTV', icon: <OndemandVideoIcon />, },
   { name: 'ObligaKids', icon: <ChildCareIcon />, },
-]
-
-export const sidebarBtnsInfo = [
-  { name: 'Settings', icon: <SettingsIcon />, },
-  { name: 'Help', icon: <SosIcon />, },
-  { name: 'Feedback', icon: <FeedbackIcon />, },
 ]
 
 export const demoThumbnailUrl = 'https://i.ibb.co/G2L2Gwp/API-Course.png';

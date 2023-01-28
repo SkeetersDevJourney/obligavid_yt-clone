@@ -13,11 +13,7 @@ import {
   Premium,
   ObligaTunes,
   ObligaTV,
-  ObligaKids,
-
-  Settings, 
-  Help, 
-  Feedback  
+  ObligaKids
 } from './components'
 
 const App = () => {
@@ -60,9 +56,6 @@ const App = () => {
           <Route path={process.env.PUBLIC_URL + '/obligatunes'} element={<ObligaTunes />} />
           <Route path={process.env.PUBLIC_URL + '/obligatv'} element={<ObligaTV />} />
           <Route path={process.env.PUBLIC_URL + '/obligaKids'} element={<ObligaKids />} />
-          <Route path={process.env.PUBLIC_URL + '/settings'} element={<Settings />} />
-          <Route path={process.env.PUBLIC_URL + '/help'} element={<Help />} />
-          <Route path={process.env.PUBLIC_URL + '/feedback'} element={<Feedback />} />
         </Routes>
       </Box>
     </BrowserRouter>

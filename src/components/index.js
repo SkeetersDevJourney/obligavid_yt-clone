@@ -18,7 +18,6 @@ export { default as Comment } from './Comment';
 
 export { default as Likes } from './Likes';
 
-
 export { default as Categories } from './Categories';
 
 export { default as Premium } from './Premium';
@@ -27,7 +26,3 @@ export { default as ContentCard } from './ContentCard';
 export { default as ObligaTunes } from './ObligaTunes';
 export { default as ObligaTV } from './ObligaTV';
 export { default as ObligaKids } from './ObligaKids';
-
-export { default as Settings } from './Settings';
-export { default as Help } from './Help';
-export { default as Feedback } from './Feedback';
