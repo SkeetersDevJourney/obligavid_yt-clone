@@ -54,7 +54,7 @@ const VideoDetails = () => {
             sx={{ color: '#fff' }}
             px={2}
           >
-            <Link to={`/channel/${channelId}`}>
+            <Link to={`${process.env.PUBLIC_URL}/channel/${channelId}`}>
               <Typography variant={{ sm: 'subtitle1', md: 'h6'}} color='#fff'>
                 {channelTitle}
               </Typography>

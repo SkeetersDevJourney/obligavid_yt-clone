@@ -46,7 +46,7 @@ const Sidebar = ({
                 <Menu />
               </IconButton>
               <Link 
-                to='/'
+                to={`${process.env.PUBLIC_URL}/`}
                 style={{ display: 'flex', alignItems: 'center' }}
               >
                 <img className='logo-icon' src={logoIcon} alt='logo icon' height={30} />
