@@ -23,7 +23,7 @@ const Sidebar = ({
   const navigate = useNavigate();
 
   return (
-    <Box  sx={{ position: 'fixed', top: 0, zIndex: 10 }}>
+    <Box  sx={{ position: 'fixed', top: 0, zIndex: 100 }}>
       <Backdrop 
         open={showSidebar}
         onClick={showSidebarHandler}
